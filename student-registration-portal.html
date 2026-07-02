@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Prince-Student Course Registration</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header class="site">
+  <div class="header-inner">
+    <div class="crest"><img src="prince.png" alt="Prince Logo" width="52px" height="52px"></div>
+    <div class="header-text">
+      <div class="eyebrow">Office of Academic Affairs</div>
+      <h1>Prince Dr K Vasudevan College of Engineering and Technology</h1>
+    </div>
+  </div>
+
+</header>
+
+<section class="hero" id="home">
+  
+  <h2>Student Course Registration Portal</h2>
+  <p>Fill in your details once, choose your department and course.</p>
+</section>
+
+<main>
+  <section class="card" id="register">
+    <div class="card-head">
+      <h3>Student Registration Form</h3>
+      <span class="tag">All fields marked * are mandatory</span>
+    </div>
+
+    <form id="regForm" novalidate>
+
+      <div class="field">
+        <label for="fullName">Full Name<span class="req">*</span></label>
+        <input type="text" id="fullName" name="fullName" placeholder="e.g. Arun Kumar" autocomplete="name">
+        <div class="error-msg" id="err-fullName"></div>
+      </div>
+
+      <div class="field">
+        <label for="email">Email<span class="req">*</span></label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email">
+        <div class="error-msg" id="err-email"></div>
+      </div>
+
+      <div class="field">
+        <label for="mobile">Mobile Number<span class="req">*</span></label>
+        <input type="tel" id="mobile" name="mobile" placeholder="10-digit number" maxlength="10" autocomplete="tel">
+        <div class="error-msg" id="err-mobile"></div>
+      </div>
+
+      <div class="field">
+        <label for="dob">Date of Birth<span class="req">*</span></label>
+        <input type="date" id="dob" name="dob">
+        <div class="error-msg" id="err-dob"></div>
+      </div>
+
+      <div class="field">
+        <fieldset>
+          <legend>Gender<span class="req">*</span></legend>
+          <div class="radio-grid">
+            <label><input type="radio" name="gender" value="Female"> Female</label>
+            <label><input type="radio" name="gender" value="Male"> Male</label>
+            <label><input type="radio" name="gender" value="Other"> Other</label>
+          </div>
+        </fieldset>
+        <div class="error-msg" id="err-gender"></div>
+      </div>
+
+      <div class="field">
+        <label for="department">Department<span class="req">*</span></label>
+        <select id="department" name="department">
+          <option value="">Select department</option>
+          <option>Computer Science Engineering</option>
+          <option>Electronics &amp; Communication</option>
+          <option>Electrical &amp; Electronics</option>
+          <option>Mechanical Engineering</option>
+          <option>Civil Engineering</option>
+          <option>Information Technology</option>
+        </select>
+        <div class="error-msg" id="err-department"></div>
+      </div>
+
+      <div class="field">
+        <label for="course">Course<span class="req">*</span></label>
+        <select id="course" name="course">
+          <option value="">Select course</option>
+          <option>Full Stack Web Development</option>
+          <option>Data Structures &amp; Algorithms</option>
+          <option>Artificial Intelligence &amp; ML</option>
+          <option>Cloud Computing</option>
+          <option>Cyber Security Fundamentals</option>
+          <option>UI/UX Design</option>
+        </select>
+        <div class="error-msg" id="err-course"></div>
+      </div>
+
+      <div class="field full">
+        <fieldset>
+          <legend>Skills</legend>
+          <div class="check-grid">
+            <label><input type="checkbox" name="skills" value="HTML/CSS"> HTML/CSS</label>
+            <label><input type="checkbox" name="skills" value="JavaScript"> JavaScript</label>
+            <label><input type="checkbox" name="skills" value="Java"> Java</label>
+            <label><input type="checkbox" name="skills" value="Python"> Python</label>
+            <label><input type="checkbox" name="skills" value="SQL"> SQL</label>
+            <label><input type="checkbox" name="skills" value="Communication"> Communication</label>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="field full">
+        <label for="address">Address<span class="req">*</span></label>
+        <textarea id="address" name="address" placeholder="House / Street, Area, City, State, PIN"></textarea>
+        <div class="error-msg" id="err-address"></div>
+      </div>
+
+      <div class="toast" id="successToast">✔ Registration saved successfully. Your entry now appears in the register below.</div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn-primary">Submit Registration</button>
+        <button type="reset" class="btn-ghost" id="resetBtn">Reset Form</button>
+      </div>
+    </form>
+  </section>
+
+  <section class="card" id="ledger">
+    <div class="card-head">
+      <h3>Registered Students</h3>
+      <span class="tag" id="countTag">0 entries</span>
+    </div>
+    <div class="ledger-wrap">
+      <table class="ledger">
+        
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Course</th>
+            <th>Mobile</th>
+            <th>Email</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="ledgerBody">
+          <tr class="empty-row"><td colspan="10">No students registered yet — submit the form above to add the first entry.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<footer class="site" id="contact">
+  <div class="footer-inner">
+    <div><strong>Prince Dr K Vasudevan College of Engineering and Technology</strong>Ponmar, Chennai, Tamil Nadu — 600127</div>
+    <div id="about">Office of Academic Affairs · admissions@pvcet.edu.in · © 2026</div>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
